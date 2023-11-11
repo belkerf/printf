@@ -8,23 +8,53 @@ int _printf(const char *format, ...)
 {
 	/*num : the number of char will be printed and returned*/
 	int num = 0;
-	va_list ap;
-	char *p;
+	va_list list_arg;
 
-	va_start(ap, format);
 	/*check if the format is null or the format is % followed by nothing*/
 	if (!format || (format[0] == '%' && format[1] == ' '))
 	{
 		return (-1);
 	}
-	for (p = (char *)format; *p; p++)
+	va_start(list_arg, format);
+	while (*format)
 	{
-		if (*p != '%')
+		if (*format != '%')
 		{
-			num += _putchar(*p);
+			num += _putchar(*format);
 		}
+		else if (*format == '%')
+		{
+			format++;
+			if (*format == '\0')
+				break;
+			if (*format == 'c')
+			{
+				char c = va_arg(list_arg, int);
+
+				write(1, &c, 1);
+				num++;
+			}
+			if (*format == 's')
+			{
+				char *strin = va_arg(list_arg, char*);
+				int str_count = 0;
+
+				while (strin[str_count] != '\0')
+				{
+					str_count++;
+				}
+				write(1, strin, str_count);
+				num += str_count;
+			}
+			if (*format == '%')
+			{
+				write(1, format, 1);
+				num++;
+			}
+		}
+		format++;
 	}
-	va_end;
+	va_end(list_arg);
 	/*return the number of char that we print*/
 	return (num);
 }
