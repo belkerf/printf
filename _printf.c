@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			num += _putchar(*format);
+			write(1, format, 1);
+			num++;
 		}
 		else if (*format == '%')
 		{
@@ -36,8 +37,7 @@ int _printf(const char *format, ...)
 			}
 			if (*format == 's')
 			{
-				char *strin = va_arg(list_arg, char*);
-				str_count = print_str(strin);
+				str_count = print_str(va_arg(list_arg, char *));
 				num += str_count;
 			}
 			if (*format == '%')

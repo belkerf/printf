@@ -1,12 +1,13 @@
 #include "main.h"
+/**
+ * print_str - function that print the string
+ * @str : the string
+ * Return: the number of bytes printed
+ */
 int print_str(char *str)
 {
-	int str_count = 0;
+	int i = strlen(str);
 
-	if (str[str_count] != '\0')
-	{
-		str_count++;
-	}
-	write(1, str, str_count);
-	return (str_count);
+	write(1, str, i);
+	return (i);
 }
