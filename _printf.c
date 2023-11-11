@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	/*num : the number of char will be printed and returned*/
-	int num = 0;
+	int num = 0, str_count = 0;
 	va_list list_arg;
 
 	/*check if the format is null or the format is % followed by nothing*/
@@ -37,13 +37,7 @@ int _printf(const char *format, ...)
 			if (*format == 's')
 			{
 				char *strin = va_arg(list_arg, char*);
-				int str_count = 0;
-
-				while (strin[str_count] != '\0')
-				{
-					str_count++;
-				}
-				write(1, strin, str_count);
+				str_count = print_str(strin);
 				num += str_count;
 			}
 			if (*format == '%')

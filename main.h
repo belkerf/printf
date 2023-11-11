@@ -7,6 +7,5 @@
 #include <stdlib.h>
 #include <limits.h>
 int _printf(const char *format, ...);
-int _putchar(char c);
-void _puts(char *str);
+int print_str(char *str);
 #endif
