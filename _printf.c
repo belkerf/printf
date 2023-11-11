@@ -6,4 +6,15 @@
  */
 int _printf(const char *format, ...)
 {
+	/*num : the number of char will be printed and returned*/
+	int num = 0;
+	va_list ap;
+	/*check if the format is null or the format is % followed by nothing*/
+	if (!format || (format[0] == '%' && format[1] == ' '))
+	{
+		return (-1);
+	}
+
+	/*return the number of char that we print*/
+	return (num);
 }
