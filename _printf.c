@@ -45,6 +45,12 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				num++;
 			}
+			if (*format == 'd'|| *format == 'i')
+			{
+				int *i = va_arg(list_arg, int *);
+				write(1, i, 100);
+				num += 4;
+			}
 		}
 		format++;
 	}
