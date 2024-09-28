@@ -7,4 +7,5 @@
 void    print_char(char c);
 int     ft_printf(const char *str, ...);
 void    ft_putstr(char *str);
+void    print_pointer(long int pp);
 #endif

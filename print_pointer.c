@@ -11,36 +11,22 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	hexa(long int pp)
 {
-	int	i;
-	int	argN;
-	va_list	ap;
+	char 	*base = "0123456789abcdef";
+	if (pp >= 0 && pp <= 15)
+	{
+		write(1, &base[pp], 1);
+	}
+	else
+	{
+		hexa(pp / 16);
+		hexa(pp % 16);
+	}
+}
 
-	i = 0;
-	argN = 1;
-	while (str[i])
-	{
-		if (str[i] == '%')
-			argN++;
-		i++;
-	}
-	va_start(ap, argN);
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{
-			i++;
-			if (str[i] == 'c')
-				print_char(va_arg(ap, int));
-			else if (str[i] == 's')
-				ft_putstr(va_arg(ap, char *));
-			else if (str[i] == 'p')
-				print_pointer(va_arg(ap, long int));
-		}
-		else
-			write(1, &str[i], 1);
-		i++;
-	}
+void	print_pointer(long int pp)
+{
+	write(1, "0x", 2);
+	hexa(pp);
 }

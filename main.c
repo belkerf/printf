@@ -2,5 +2,9 @@
 
 int main()
 {
-	ft_printf("he%c\n %s", 'y' , "jaouad");
+	int a = 0;
+	int *p = &a;
+
+	ft_printf("%p\n", p);
+	printf("%p\n", p);
 }
