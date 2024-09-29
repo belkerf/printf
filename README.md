@@ -17,7 +17,7 @@ printf("this is a %s", "string");
 ```
 output:
 ```bash
-this is a string
+$ this is a string
 ```
 ## technology
 ## langages used
