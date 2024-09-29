@@ -38,6 +38,8 @@ int	ft_printf(const char *str, ...)
 				ft_putstr(va_arg(ap, char *));
 			else if (str[i] == 'p')
 				print_pointer(va_arg(ap, long int));
+			else if (str[i] == 'i' || str[i] == 'd')
+				print_dec(va_arg(ap, int));
 		}
 		else
 			write(1, &str[i], 1);
