@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   Hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,43 +11,16 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void    Hexa(long int pp)
 {
-	int	i;
-	int	argN;
-	va_list	ap;
-
-	i = 0;
-	argN = 1;
-	while (str[i])
-	{
-		if (str[i] == '%')
-			argN++;
-		i++;
-	}
-	va_start(ap, str);
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{
-			i++;
-			if (str[i] == 'c')
-				print_char(va_arg(ap, int));
-			else if (str[i] == 's')
-				ft_putstr(va_arg(ap, char *));
-			else if (str[i] == 'p')
-				print_pointer(va_arg(ap, long int));
-			else if (str[i] == 'i' || str[i] == 'd')
-				print_dec(va_arg(ap, int));
-			else if (str[i] == 'x')
-				hexa(va_arg(ap, long int));
-			else if (str[i] == 'X')
-				Hexa(va_arg(ap, long int));
-		}
-		else
-			write(1, &str[i], 1);
-		i++;
-	}
-	return (1);
+        char    *base = "0123456789ABCDEF";
+	if (pp >= 0 && pp <= 15)
+        {
+                write(1, &base[pp], 1);
+        }
+        else
+        {
+                Hexa(pp / 16);
+                Hexa(pp % 16);
+        }
 }

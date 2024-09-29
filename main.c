@@ -3,5 +3,6 @@
 int main()
 {
 
-	ft_printf("%d	%i\n", -112, 122);
+	ft_printf("%x	%X\n", 255, 122);
+	printf("%x	%X\n", 255, 122);
 }
