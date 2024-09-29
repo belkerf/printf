@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 			argN++;
 		i++;
 	}
-	va_start(ap, argN);
+	va_start(ap, str);
 	i = 0;
 	while (str[i])
 	{
@@ -45,4 +45,5 @@ int	ft_printf(const char *str, ...)
 			write(1, &str[i], 1);
 		i++;
 	}
+	return (1);
 }
