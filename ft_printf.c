@@ -38,12 +38,14 @@ int	ft_printf(const char *str, ...)
 				ft_putstr(va_arg(ap, char *));
 			else if (str[i] == 'p')
 				print_pointer(va_arg(ap, long int));
-			else if (str[i] == 'i' || str[i] == 'd')
+			else if (str[i] == 'i' || str[i] == 'd' || str[i] =='u')
 				print_dec(va_arg(ap, int));
 			else if (str[i] == 'x')
 				hexa(va_arg(ap, long int));
 			else if (str[i] == 'X')
 				Hexa(va_arg(ap, long int));
+			else if (str[i] == '%')
+				write(1, "%", 1);
 		}
 		else
 			write(1, &str[i], 1);
