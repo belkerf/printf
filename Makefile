@@ -1,8 +1,12 @@
-NAME=libftprintf.a
-CC=gcc
+NAME = libftprintf.a
+CC = cc
 FLAGS= -Werror -Wextra -Wall
 
 all: libftprintf.a
 
 libftprintf.a:
-	$(CC) $(FLAGS) *.c *.h -o output
+	$(CC) $(FLAGS) -c *.c *.h
+	ar -rc  $(NAME) *.o
+fclean:
+	rm *.o *.a
+	clear
