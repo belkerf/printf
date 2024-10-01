@@ -30,8 +30,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			write(1, &str[i], 1);
-			count++;
+			count += print_char(str[i]);
 		}
 		i++;
 	}
