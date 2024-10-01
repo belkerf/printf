@@ -4,11 +4,11 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void    print_char(char c);
+int    print_char(char c);
 int     ft_printf(const char *str, ...);
-void    ft_putstr(char *str);
-void    print_pointer(long int pp);
-void    print_dec(int n);
-void    hexa(long int pp);
-void    Hexa(long int pp);
+int    ft_putstr(char *str);
+int    print_pointer(long int pp);
+int    print_dec(int n);
+int    hexa(long int pp);
+int    Hexa(long int pp);
 #endif
