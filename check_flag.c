@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	check_flag(char c)
+int	check_flag(char c, va_list ap)
 {
 	int counter;
 
@@ -25,7 +25,7 @@ int	check_flag(char c)
 	else if ( c == 'i' || c == 'd' || c == 'u')
 		counter = print_dec(va_arg(ap, int));
 	else if (c == 'x')
-		counter = hexa(va_arg(ap, long int));
+		counter = hexa(va_arg(ap, long int), 0);
 	else if (c == 'X')
 		Hexa(va_arg(ap, long int), 0);
 	else if (c == '%')

@@ -11,5 +11,5 @@ int    print_pointer(long int pp);
 int    print_dec(int n);
 int    hexa(long int pp, int c);
 int    Hexa(long int pp, int c);
-int     check_flag(char c);
+int     check_flag(char c, va_list ap);
 #endif
