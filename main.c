@@ -3,5 +3,5 @@
 int main()
 {
 
-	ft_printf("%x %%	%u\n", 255, 122);
+	printf("%i\n",ft_printf("%x %%	%u\n", 255, 122));
 }
