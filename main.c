@@ -4,5 +4,5 @@
 int main()
 {
 
-	printf("%i\n",ft_printf("%d %s\n",123, "123" ));
+	printf("%i\n",ft_printf("%x\n",255555555555));
 }

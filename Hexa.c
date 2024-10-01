@@ -22,8 +22,9 @@ int    Hexa(long int pp, int c)
         }
         else
         {
-                Hexa(pp / 16, c);
-                Hexa(pp % 16, c);
+                c += Hexa(pp / 16, c);
+		write(1, &base[pp % 16], 1);
+                c++;
         }
 	return (c);
 }
