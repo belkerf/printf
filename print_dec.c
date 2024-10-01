@@ -19,15 +19,15 @@ int	print_dec(int n)
 	if (n < 0)
 	{
 		write(1, "-",1);
-		print_dec(n * (-1));
 		count++;
+		print_dec(n * (-1));
 	}
 	else if (n <= 9)
 		count += print_char(n + '0');
 	else
 	{
-		print_dec(n / 10);
-		print_dec(n % 10);
+		count += print_dec(n / 10);
+		count += print_dec(n % 10);
 	}
 	return (count);
 }
