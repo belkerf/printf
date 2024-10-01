@@ -13,22 +13,21 @@
 
 void	print_dec(int n)
 {
-	char c;
+	int	count;
 
+	count = 0;
 	if (n < 0)
 	{
-		n *= (-1);
 		write(1, "-",1);
-		print_dec(n);
+		print_dec(n * (-1));
+		count++;
 	}
 	else if (n <= 9)
-	{
-		c = n + '0';
-		write(1, &c, 1);
-	}
+		count += print_char(n + '0');
 	else
 	{
 		print_dec(n / 10);
 		print_dec(n % 10);
 	}
+	return (count);
 }
