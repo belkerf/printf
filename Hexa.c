@@ -16,13 +16,16 @@ int    Hexa(long int pp)
 	int	count;
         char    *base = "0123456789ABCDEF";
 
+	count = 0;
 	if (pp >= 0 && pp <= 15)
         {
                 write(1, &base[pp], 1);
+		count++;
         }
         else
         {
                 Hexa(pp / 16);
                 Hexa(pp % 16);
         }
+	return (count);
 }
