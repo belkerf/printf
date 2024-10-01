@@ -4,5 +4,7 @@
 int main()
 {
 
-	printf("%i\n",ft_printf("%x\n",255555555555));
+	int a = 0;
+	int *p = &a;
+	printf("%i\n",ft_printf("%p\n", p));
 }

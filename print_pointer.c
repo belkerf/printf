@@ -32,5 +32,5 @@ int	hexa(long int pp, int c)
 int	print_pointer(long int pp)
 {
 	write(1, "0x", 2);
-	return (hexa(pp, 0));
+	return (hexa(pp, 0) + 2);
 }
