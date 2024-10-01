@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void    Hexa(long int pp)
+int    Hexa(long int pp)
 {
+	int	count;
         char    *base = "0123456789ABCDEF";
+
 	if (pp >= 0 && pp <= 15)
         {
                 write(1, &base[pp], 1);

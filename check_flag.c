@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   check_flag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,29 +11,26 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	check_flag(char c)
 {
-	int	i;
-	int	count;
-	va_list	ap;
+	int counter;
 
-	count = 0;
-	i = 0;
-	va_start(ap, str);
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{
-			i++;
-			count += check_flag(str[i]);
-		}
-		else
-		{
-			write(1, &str[i], 1);
-			count++;
-		}
-		i++;
-	}
-	return (count);
+	counter = 1;
+	if (c == 'c')
+		counter = print_char(va_arg(ap, int));
+	else if (c == 's')
+		counter = ft_putstr(va_arg(ap, char *));
+	else if (c == 'p')
+		counter = print_pointer(va_arg(ap, long int));
+	else if ( c == 'i' || c == 'd' || c == 'u')
+		counter = print_dec(va_arg(ap, int));
+	else if (c == 'x')
+		counter = hexa(va_arg(ap, long int));
+	else if (c == 'X')
+		Hexa(va_arg(ap, long int));
+	else if (c == '%')
+		write(1, "%", 1);
+	else
+		write(1, &c, 1);
+	return (counter);
 }
