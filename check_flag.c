@@ -27,7 +27,7 @@ int	check_flag(char c)
 	else if (c == 'x')
 		counter = hexa(va_arg(ap, long int));
 	else if (c == 'X')
-		Hexa(va_arg(ap, long int));
+		Hexa(va_arg(ap, long int), 0);
 	else if (c == '%')
 		write(1, "%", 1);
 	else

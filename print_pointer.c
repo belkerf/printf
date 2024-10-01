@@ -11,22 +11,25 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	hexa(long int pp)
+int	hexa(long int pp, int c)
 {
+
 	char 	*base = "0123456789abcdef";
 	if (pp >= 0 && pp <= 15)
 	{
 		write(1, &base[pp], 1);
+		c++;
 	}
 	else
 	{
-		hexa(pp / 16);
-		hexa(pp % 16);
+		hexa(pp / 16, c);
+		hexa(pp % 16, c);
 	}
+	return (c);
 }
 
-void	print_pointer(long int pp)
+int	print_pointer(long int pp)
 {
 	write(1, "0x", 2);
-	hexa(pp);
+	return (hexa(pp, 0));
 }
