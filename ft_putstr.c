@@ -11,11 +11,15 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
+	int	i;
+
+	i = 0;
 	while (*str)
 	{
-		write(1, str, 1);
+		i += print_char(*str);
 		str++;
 	}
+	return (i);
 }

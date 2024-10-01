@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	print_dec(int n)
+int	print_dec(int n)
 {
 	int	count;
 
