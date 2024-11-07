@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:17:32 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/07 17:27:47 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:34:44 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_flag(char c, va_list ap)
 	else if (c == 'x')
 		counter = hexa_l(va_arg(ap, long int), 0);
 	else if (c == 'X')
-		counter = hexa(va_arg(ap, long int), 0);
+		counter = hexa_l(va_arg(ap, long int), 0);
 	else if (c == '%')
 		write(1, "%", 1);
 	else
