@@ -9,6 +9,7 @@
 /*   Updated: 2024/09/09 15:57:30 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	check_flag(char c, va_list ap)
@@ -25,7 +26,7 @@ int	check_flag(char c, va_list ap)
 	else if ( c == 'i' || c == 'd' || c == 'u')
 		counter = print_dec(va_arg(ap, int));
 	else if (c == 'x')
-		counter = hexa(va_arg(ap, long int), 0);
+		counter = hexa_l(va_arg(ap, long int), 0);
 	else if (c == 'X')
 		counter = Hexa(va_arg(ap, long int), 0);
 	else if (c == '%')
