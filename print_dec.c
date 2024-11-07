@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:21:19 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/07 17:21:43 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/07 18:17:11 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,15 @@ int	print_dec(int n)
 	count = 0;
 	if (n < 0)
 	{
-		write(1, "-", 1);
-		count++;
+		count += print_char('-');;
 		print_dec(n * (-1));
 	}
 	else if (n <= 9)
 		count += print_char(n + '0');
 	else
 	{
-		count += print_dec(n / 10);
-		count += print_dec(n % 10);
+		print_dec(n / 10);
+		print_dec(n % 10);
 	}
 	return (count);
 }
