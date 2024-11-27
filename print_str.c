@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 16:27:08 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:45:01 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putstr(char *str)
 {
 	int	i;
-	int j;
+	int	j;
 
 	if (str == NULL)
 		str = "(null)";

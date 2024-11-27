@@ -6,14 +6,14 @@
 #    By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:53:37 by jbelkerf          #+#    #+#              #
-#    Updated: 2024/11/07 17:10:18 by jbelkerf         ###   ########.fr        #
+#    Updated: 2024/11/27 16:39:44 by jbelkerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putstr.c Hexa.c print_char.c print_dec.c print_pointer.c \
-check_flag.c hexa1.c
+SRC = printf.c print_str.c print_lhexa.c print_uhexa.c print_char.c print_dec.c print_pointer.c \
+check_flag.c
 
 OBJ = $(SRC:.c=.o)
 CC = cc
