@@ -24,7 +24,7 @@ int	hexa_u(unsigned long int pp, int c)
 	if (pp == (unsigned long)(-9223372036854775807 -1))
 		return (write(1, "000000000000000", 1));
 	base = "0123456789ABCDEF";
-	if (pp >= 0 && pp <= 15)
+	if (pp <= 15)
 	{
 		write(1, &base[pp], 1);
 		c++;

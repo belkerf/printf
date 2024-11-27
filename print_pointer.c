@@ -17,7 +17,7 @@ int	hexa_ll(unsigned long pp, int c)
 	char	*base;
 	
 	base = "0123456789abcdef";
-	if (pp >= 0 && pp <= 15)
+	if (pp <= 15)
 	{
 		write(1, &base[pp], 1);
 		c++;
