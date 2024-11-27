@@ -6,11 +6,11 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:17:32 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/07 17:34:44 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:27:28 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 int	check_flag(char c, va_list ap)
 {
@@ -22,7 +22,7 @@ int	check_flag(char c, va_list ap)
 	else if (c == 's')
 		counter = ft_putstr(va_arg(ap, char *));
 	else if (c == 'p')
-		counter = print_pointer(va_arg(ap, long int));
+		counter = print_pointer(va_arg(ap, unsigned long int));
 	else if (c == 'i' || c == 'd' || c == 'u')
 		counter = print_dec(va_arg(ap, int));
 	else if (c == 'x')

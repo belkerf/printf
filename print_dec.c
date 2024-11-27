@@ -6,11 +6,11 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:21:19 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/07 18:17:11 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:27:19 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 int	print_dec(int n)
 {
