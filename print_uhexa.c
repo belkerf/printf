@@ -6,13 +6,13 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 16:45:17 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:17:07 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	hexa_l(long int pp, int c)
+int	hexa_u(long int pp, int c)
 {
 	char	*base;
 

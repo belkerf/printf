@@ -6,11 +6,11 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:58:57 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 16:27:16 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:08:11 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	hexa_l(long int pp, int c)
 {

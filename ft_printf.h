@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:26 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/11/07 17:28:20 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/27 18:18:33 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putstr(char *str)
-{
-	int	i;
-	int	j;
+# include <stdarg.h>
+# include <unistd.h>
 
-	if (str == NULL)
-		str = "(null)";
-	i = 0;
-	j = 0;
-	while (str[j])
-	{
-		i += print_char(str[j]);
-		j++;
-	}
-	return (i);
-}
+int	print_char(char c);
+int	ft_printf(const char *str, ...);
+int	ft_putstr(char *str);
+int	print_pointer(unsigned long int pp);
+int	print_dec(int n, int c);
+int print_unsigned(unsigned int n, int c);
+int	hexa_l(long int pp, int c);
+int	hexa_u(long int pp, int c);
+int	check_flag(char c, va_list ap);
+#endif

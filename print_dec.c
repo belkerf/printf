@@ -6,28 +6,25 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:21:19 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 16:44:37 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:10:03 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	print_dec(int n)
+int	print_dec(int n, int count)
 {
-	int	count;
-
-	count = 0;
 	if (n < 0)
 	{
 		count += print_char('-');
-		print_dec(n * (-1));
+		count = print_dec(n * (-1), count);
 	}
 	else if (n <= 9)
 		count += print_char(n + '0');
 	else
 	{
-		print_dec(n / 10);
-		print_dec(n % 10);
+		count = print_dec(n / 10, count);
+		count += print_char(n % 10 + '0');
 	}
 	return (count);
 }
