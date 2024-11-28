@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 23:00:54 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:04:46 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	hexa_u(unsigned long int pp, int c)
 {
-	char	*base;
-	unsigned long int p = 1844674407370955161;
+	char				*base;
+	unsigned long int	p;
 
+	p = 1844674407370955161;
 	if (pp == 9223372036854775807 || pp == (p * 10) + 5)
 	{
 		return (write(1, "FFFFFFFFFFFFF", 8));

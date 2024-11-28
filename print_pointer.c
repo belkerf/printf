@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 23:49:24 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:04:01 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	hexa_ll(unsigned long pp, int c)
 {
 	char	*base;
-	
+
 	base = "0123456789abcdef";
 	if (pp <= 15)
 	{

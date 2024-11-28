@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:17:32 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 23:49:33 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:01:42 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_flag(char c, va_list ap)
 	else if (c == 's')
 		counter = ft_putstr(va_arg(ap, char *));
 	else if (c == 'p')
-		counter = print_pointer(va_arg(ap, unsigned  long int));
+		counter = print_pointer(va_arg(ap, unsigned long int));
 	else if (c == 'i' || c == 'd')
 		counter = print_dec(va_arg(ap, int), 0);
 	else if (c == 'u')
