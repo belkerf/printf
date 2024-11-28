@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:35 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:48:21 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_printf(const char *str, ...)
 	int		count;
 	va_list	ap;
 
+	// if (write(1, 0, 0) == -1)
+	// 	return (-1);
 	count = 0;
 	i = 0;
 	va_start(ap, str);
