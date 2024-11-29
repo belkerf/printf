@@ -20,6 +20,8 @@ CC = cc
 FLAGS= -Werror -Wextra -Wall
 
 all: $(NAME)
+
+bonus: $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 $(NAME): $(OBJ) 

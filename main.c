@@ -17,13 +17,6 @@
 
 int main()
 {
-    int i, j = 0;
-    //ft_printf("retunr %d\n",ft_printf("%d\n", -10000));
-    //printf("%ld\n", ULONG_MAX);
-    fclose(stdout);
-    i = ft_printf("\001\002\007\v\010\f\r\n");
-    j = printf("\001\002\007\v\010\f\r\n");
-    fopen(stdout, O_RDWR);
-    printf("%i %i\n", i, j);
+    printf("%   x\n", 10);
     return (0);
 }

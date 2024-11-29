@@ -12,30 +12,47 @@
 
 #include "ft_printf.h"
 
+char *ft_strdup(const char *str)
+{
+	int i;
+	char *dup;
+
+	i = 0;
+	while (str[i])
+		i++;
+	dup = malloc(i + 1);
+	i = 0;
+	while (str[i])
+	{
+		dup[i] = str[i];
+		i++;
+	}
+	dup[i] = 0;
+	return (dup);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	int		i;
+	char	*tmp;
+	char	*dup;
 	int		count;
 	va_list	ap;
 
-	// if (write(1, 0, 0) == -1)
-	// 	return (-1);
+	dup = ft_strdup(str);
+	tmp = dup;
 	count = 0;
 	i = 0;
 	va_start(ap, str);
 	i = 0;
-	while (str[i])
+	while (dup[i])
 	{
-		if (str[i] == '%')
-		{
-			i++;
-			count += check_flag(str[i], ap);
-		}
+		if (dup[i] == '%')
+			count += check_flag(dup[++i], ap);
 		else
-		{
-			count += print_char(str[i]);
-		}
+			count += print_char(dup[i]);
 		i++;
 	}
+	free(tmp);
 	return (count);
 }
